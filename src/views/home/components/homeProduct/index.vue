@@ -1,9 +1,5 @@
-<template>
-    我是产品列表
-</template>
+<template>我是产品列表</template>
 
-<script setup lang='ts'>
-</script>
+<script setup lang="ts"></script>
 
-<style scoped lang=''>
-</style>
+<style scoped lang=""></style>

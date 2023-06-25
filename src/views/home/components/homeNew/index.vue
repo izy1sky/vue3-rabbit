@@ -1,9 +1,5 @@
-<template>
-    我是新鲜好物
-</template>
+<template>我是新鲜好物</template>
 
-<script setup lang='ts'>
-</script>
+<script setup lang="ts"></script>
 
-<style scoped lang=''>
-</style>
+<style scoped lang=""></style>
