@@ -1,5 +1,6 @@
 <template>
   <h1>This is the app page!</h1>
+  <v-btn color="primary" icon="mdi-home"></v-btn>
 </template>
 
 <script setup lang="ts">

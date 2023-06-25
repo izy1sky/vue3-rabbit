@@ -1,9 +1,21 @@
 import type { App } from 'vue'
 import { createVuetify } from 'vuetify'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import { createPinia } from 'pinia'
 import router from '@/routers'
-export default (app: App) => {
-  const vuetify = createVuetify()
-  const pinia = createPinia()
-  app.use(vuetify).use(pinia).use(router)
+import 'vuetify/styles'
+import '@mdi/font/css/materialdesignicons.css'
+const vuetify = createVuetify({
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi
+    }
+  }
+})
+const pinia = createPinia()
+
+export const registerPlugins = (app: App) => {
+  app.use(router).use(pinia).use(vuetify)
 }
