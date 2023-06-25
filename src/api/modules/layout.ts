@@ -1,9 +1,9 @@
 import request from '@/utils/request'
-import type { 
-  GetCategoryListResponseData, 
+import type {
+  GetCategoryListResponseData,
   GetBannerResponseData,
   GetNewResponseData,
-  GetHotResponseData, 
+  GetHotResponseData,
   GetHomeGoodsResponseData
 } from '../types/layout'
 enum LAYOUT {

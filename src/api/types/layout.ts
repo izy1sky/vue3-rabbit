@@ -37,24 +37,24 @@ export interface GetBannerResponseData extends ResponseData {
 }
 
 export interface NewGoodData {
-  id:string,
-  name:string,
-  desc:string,
-  price:string,
-  picture:string,
-  discount:string,
-  orderNum:number
+  id: string
+  name: string
+  desc: string
+  price: string
+  picture: string
+  discount: string
+  orderNum: number
 }
 
 export interface GetNewResponseData extends ResponseData {
-  result:NewGoodData[]
+  result: NewGoodData[]
 }
 
 export interface HotGoodData {
-  id:string,
-  picture:string,
-  title:string,
-  alt:string
+  id: string
+  picture: string
+  title: string
+  alt: string
 }
 
 export interface GetHotResponseData extends ResponseData {
@@ -62,19 +62,19 @@ export interface GetHotResponseData extends ResponseData {
 }
 
 export interface HomeGoodChildrenData {
-  id:string,
-  name:string,
-  layer:number,
-  parent:null
+  id: string
+  name: string
+  layer: number
+  parent: null
 }
 
 export interface HomeGoodData {
-  children:HomeGoodChildrenData[],
-  goods: any[],
-  id:string,
-  name:string,
-  picture:string,
-  saleInfo:string
+  children: HomeGoodChildrenData[]
+  goods: any[]
+  id: string
+  name: string
+  picture: string
+  saleInfo: string
 }
 
 export interface GetHomeGoodsResponseData extends ResponseData {

@@ -12,9 +12,9 @@
           <template #title>
             <span class="text-h6">{{ category.name }}</span>
             <template v-for="i in category.children.length" :key="i">
-              <span class="ms-2" v-if="i < 3">{{ category.children[i-1].name }}</span>
+              <span class="ms-2" v-if="i < 3">{{ category.children[i - 1].name }}</span>
             </template>
-            
+
             <!-- <span > {{ category.children[1].name }}</span> -->
           </template>
         </v-list-item>

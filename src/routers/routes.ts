@@ -11,9 +11,9 @@ const routes: any[] = [
       },
       {
         path: 'category/:id',
-        name:'category',
-        component:()=>import('@/views/category/index.vue'),
-        props:true
+        name: 'category',
+        component: () => import('@/views/category/index.vue'),
+        props: true
       }
     ]
   },
