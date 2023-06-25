@@ -4,8 +4,9 @@
     <homeBanners class="home-banners"></homeBanners>
   </div>
 
-  <homeNew></homeNew>
-  <homeHot></homeHot>
+  <homeNew class="mt-10"></homeNew>
+
+  <homeHot class="mt-10"></homeHot>
   <homeProduct></homeProduct>
 </template>
 
@@ -22,12 +23,13 @@ import homeHot from '@/views/home/components/homeHot/index.vue'
   position: relative;
   z-index: 2;
   width: 400px;
+  height: 100%;
 }
 .home-banners {
   position: absolute;
   left: 0px;
   top: 0px;
-  height: 528px !important;
   z-index: 1;
+  height: 100%;
 }
 </style>

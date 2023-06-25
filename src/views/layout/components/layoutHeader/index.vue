@@ -1,13 +1,17 @@
 <template>
-  <v-container class="my-5">
     <v-card-item>
       <v-row justify="center" align="center">
         <v-col cols="2">
-          <img src="src/assets/images/logo.png" style="background: none" alt="" />
+          <img src="/src/assets/images/logo.png" style="background: none" alt="" />
         </v-col>
         <v-col cols="7">
           <v-btn-toggle>
-            <v-btn v-for="category in category_list" :key="category.id">{{ category.name }}</v-btn>
+            <v-btn class="text-h6 ms-2" :to="{name: 'home'}">{{ '首页' }}</v-btn>
+            <v-btn class="text-h6 ms-2" 
+            v-for="category in category_list" 
+            :key="category.id" 
+            :to="{name:'category', params:{id:category.id}}"
+            color="primary">{{ category.name }}</v-btn>
           </v-btn-toggle>
         </v-col>
         <v-col cols="3">
@@ -21,7 +25,6 @@
         </v-col>
       </v-row>
     </v-card-item>
-  </v-container>
 </template>
 
 <script setup lang="ts">

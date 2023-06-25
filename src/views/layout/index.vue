@@ -2,9 +2,9 @@
   <v-app>
     <layoutNav></layoutNav>
     <v-main>
-      <layoutHeader></layoutHeader>
-      <v-container>
-        <router-view></router-view>
+      <v-container class="container">
+        <layoutHeader></layoutHeader>
+        <router-view :key="($route.params.id as string)"></router-view>
       </v-container>
     </v-main>
     <layoutFooter></layoutFooter>
@@ -17,4 +17,8 @@ import layoutFooter from './components/layoutFooter/index.vue'
 import layoutHeader from './components/layoutHeader/index.vue'
 </script>
 
-<style scoped lang=""></style>
+<style scoped lang="scss">
+.container {
+  max-width: 1800px;
+}
+</style>

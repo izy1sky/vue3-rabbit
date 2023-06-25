@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-list class="categoryList" theme="dark" lines="two">
+    <v-list class="categoryList" theme="dark" lines="two" v-if="category_list.length">
       <template v-for="(category, index) in category_list" :key="category.id">
         <v-list-item
           color="success"
@@ -11,8 +11,11 @@
         >
           <template #title>
             <span class="text-h6">{{ category.name }}</span>
-            <span class="mx-2">{{ category.children[0].name }}</span>
-            <span>{{ category.children[1].name }}</span>
+            <template v-for="i in category.children.length" :key="i">
+              <span class="ms-2" v-if="i < 3">{{ category.children[i-1].name }}</span>
+            </template>
+            
+            <!-- <span > {{ category.children[1].name }}</span> -->
           </template>
         </v-list-item>
       </template>
@@ -24,10 +27,10 @@
       </v-card-item>
       <v-card-item v-if="detailCategory">
         <v-card>
-          <v-row justify="start" align="center">
+          <v-row justify="start" align="stretch">
             <template v-for="item in detailCategory['goods']" :key="item.id">
               <v-col cols="4" class="pa-3">
-                <v-card class="goodsCard">
+                <v-card class="goodsCard" height="100%">
                   <v-row justify="center" align="center">
                     <v-col cols="4">
                       <v-img :src="item.picture" cover></v-img>
@@ -52,7 +55,6 @@
 import useLayoutStore from '@/stores/modules/layout'
 import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
-import { watchEffect } from 'vue'
 const layoutStore = useLayoutStore()
 const { category_list } = storeToRefs(layoutStore)
 const detailCategory = ref()
@@ -65,9 +67,6 @@ const mouseoverHandler = (index: number) => {
 const mouseoutHandler = (index: number) => {
   isShow.value = false
 }
-watchEffect(() => {
-  console.log(category_list.value)
-})
 </script>
 
 <style scoped lang="scss">
@@ -82,7 +81,7 @@ watchEffect(() => {
   height: 100%;
 }
 
-.goodsCard {
-  height: 130px;
-}
+// .goodsCard {
+//   height: 130px;
+// }
 </style>

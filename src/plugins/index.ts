@@ -6,6 +6,8 @@ import { createPinia } from 'pinia'
 import router from '@/routers'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
+import directives from './directives'
+import GlobalComponents from './GlobalComponents'
 const myCustomLightTheme: ThemeDefinition = {
   dark: false,
   colors: {
@@ -33,5 +35,5 @@ const vuetify = createVuetify({
 const pinia = createPinia()
 
 export const registerPlugins = (app: App) => {
-  app.use(router).use(pinia).use(vuetify)
+  app.use(router).use(pinia).use(vuetify).use(directives).use(GlobalComponents)
 }
