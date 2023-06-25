@@ -27,6 +27,13 @@ export default defineConfig(({mode}) => {
           rewrite: (path) => path.replace(new RegExp(`^${env.VITE_APP_BASE_API}`), ''),
         }
       }
+    },
+    css: {
+      preprocessorOptions: {
+        scss:{
+          additionalData: '@use "@/styles/vars.scss" as *;',
+        }
+      }
     }
   }
 })
