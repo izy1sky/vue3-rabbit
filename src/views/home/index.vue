@@ -30,6 +30,6 @@ import homeHot from '@/views/home/components/homeHot/index.vue'
   left: 0px;
   top: 0px;
   z-index: 1;
-  height: 100%;
+  height: 100% !important;
 }
 </style>
