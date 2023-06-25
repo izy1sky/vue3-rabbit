@@ -6,7 +6,9 @@
       </v-col>
       <v-col cols="7">
         <v-btn-toggle>
-          <v-btn class="text-h6 ms-2" :to="{ name: 'home' }" active-class="none" :ripple="none">{{ '首页' }}</v-btn>
+          <v-btn class="text-h6 ms-2" :to="{ name: 'home' }" active-class="none" :ripple="none">{{
+            '首页'
+          }}</v-btn>
           <v-btn
             class="text-h6 ms-2"
             v-for="category in category_list"

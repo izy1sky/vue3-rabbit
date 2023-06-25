@@ -1,9 +1,5 @@
 <template>
-  <v-carousel 
-  v-if="banner_list.length" 
-  cycle 
-  hide-delimiter-background 
-  show-arrows="hover">
+  <v-carousel v-if="banner_list.length" cycle hide-delimiter-background show-arrows="hover">
     <template v-for="banner in banner_list" :key="banner.id">
       <v-carousel-item :src="banner.imgUrl" cover></v-carousel-item>
     </template>
