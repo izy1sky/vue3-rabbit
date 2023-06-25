@@ -1,5 +1,6 @@
-import request from "@/utils/request";
+import request from '@/utils/request'
 
-export const reqTest = () => request({
-    url:'/home/category/head'
-})
+export const reqTest = () =>
+  request({
+    url: '/home/category/head'
+  })

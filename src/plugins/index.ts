@@ -6,14 +6,14 @@ import { createPinia } from 'pinia'
 import router from '@/routers'
 import 'vuetify/styles'
 import '@mdi/font/css/materialdesignicons.css'
-const myCustomLightTheme:ThemeDefinition = {
-    dark:false,
-    colors:{
-        primary:'#27ba9b',
-        success:'#1dc779',
-        warning:'#ffb302',
-        error:'#cf4444',
-    }
+const myCustomLightTheme: ThemeDefinition = {
+  dark: false,
+  colors: {
+    primary: '#27ba9b',
+    success: '#1dc779',
+    warning: '#ffb302',
+    error: '#cf4444'
+  }
 }
 const vuetify = createVuetify({
   icons: {
@@ -23,10 +23,10 @@ const vuetify = createVuetify({
       mdi
     }
   },
-  theme:{
-    defaultTheme:'myCustomLightTheme',
-    themes:{
-        myCustomLightTheme
+  theme: {
+    defaultTheme: 'myCustomLightTheme',
+    themes: {
+      myCustomLightTheme
     }
   }
 })
