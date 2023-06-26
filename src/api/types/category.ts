@@ -35,46 +35,46 @@ export interface GetCategoryResponseData extends ResponseData {
 }
 
 export interface SecondCategoryGoodsData {
-  id:string,
-  name:string,
-  picture:string,
-  price:string,
-  desc:string,
-  orderNum:number
+  id: string
+  name: string
+  picture: string
+  price: string
+  desc: string
+  orderNum: number
 }
 
 export interface SecondCategoryCategoriesDate {
-  id:string,
-  name:string,
-  layer:number,
-  parent:null
+  id: string
+  name: string
+  layer: number
+  parent: null
 }
 
 export interface GetSecondCategoryResponseData extends ResponseData {
   result: {
-    id:string,
-    name:string,
-    picture:null,
-    parentId:string,
-    parentName:string,
-    goods: SecondCategoryGoodsData[],
-    categories:SecondCategoryCategoriesDate[]
+    id: string
+    name: string
+    picture: null
+    parentId: string
+    parentName: string
+    goods: SecondCategoryGoodsData[]
+    categories: SecondCategoryCategoriesDate[]
   }
 }
 
 export interface GetSecondCategoryGoodsRequestData {
-  categoryId: string,
-  page: number,
-  pageSize: number,
+  categoryId: string
+  page: number
+  pageSize: number
   sortField: string
 }
 
-export interface GetSecondCategoryGoodsResponseData extends ResponseData{
+export interface GetSecondCategoryGoodsResponseData extends ResponseData {
   result: {
-    counts:number,
-    pageSize: number,
-    pages:number,
-    page:number,
+    counts: number
+    pageSize: number
+    pages: number
+    page: number
     items: SecondCategoryGoodsData[]
   }
 }

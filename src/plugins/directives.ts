@@ -15,9 +15,9 @@ export default {
       }
     })
     app.directive('intersection', {
-      mounted: (el,binding) => {
-        const observer = new IntersectionObserver((entries, observer)=> {
-          entries.forEach(entry => {
+      mounted: (el, binding) => {
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
             if (entry.isIntersecting) {
               if (binding.value) {
                 binding.value()

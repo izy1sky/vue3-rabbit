@@ -14,7 +14,11 @@
         <v-row justify="center" align="stretch">
           <template v-for="children in childrenItems" :key="children.id">
             <v-col>
-              <v-card height="100%" variant="flat" :to="{name:'secondCategory', params: {id: children.id}}">
+              <v-card
+                height="100%"
+                variant="flat"
+                :to="{ name: 'secondCategory', params: { id: children.id } }"
+              >
                 <v-img cover :src="children.picture"></v-img>
                 <v-card-item>
                   <div class="text-center">{{ children.name }}</div>

@@ -19,7 +19,7 @@ const routes: any[] = [
         path: 'secondCategory/:id',
         name: 'secondCategory',
         component: () => import('@/views/secondCategory/index.vue'),
-        props:true
+        props: true
       }
     ]
   },

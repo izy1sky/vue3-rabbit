@@ -1,5 +1,9 @@
 import { defineStore } from 'pinia'
-import { reqGetCategory, reqGetSecondCategory, reqGetSecondCategoryGoods } from '@/api/modules/category'
+import {
+  reqGetCategory,
+  reqGetSecondCategory,
+  reqGetSecondCategoryGoods
+} from '@/api/modules/category'
 import { reqGetBanner } from '@/api/modules/layout'
 import type { GetSecondCategoryGoodsRequestData } from '@/api/types/category'
 const useCategoryStore = defineStore('category', () => {
@@ -22,7 +26,7 @@ const useCategoryStore = defineStore('category', () => {
     return Promise.resolve(response.result)
   }
   // 获取二级分类下的货物
-  const getSecondCategoryGoods = async (data:GetSecondCategoryGoodsRequestData) => {
+  const getSecondCategoryGoods = async (data: GetSecondCategoryGoodsRequestData) => {
     const response = await reqGetSecondCategoryGoods(data)
     return response.result
   }
