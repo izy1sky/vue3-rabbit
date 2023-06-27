@@ -11,7 +11,7 @@ enum CATEGORY {
   GET_CATEGORY_API = '/category',
   GET_SECOND_CATEGORY_API = '/category/sub/filter',
   GET_SECOND_CATEGORY_GOODS_API = '/category/goods/temporary',
-  GET_GOOD_INFO_API = '/goods',
+  GET_GOOD_INFO_API = '/goods'
 }
 
 export const reqGetCategory = (id: string) =>
@@ -36,8 +36,9 @@ export const reqGetSecondCategoryGoods = (data: GetSecondCategoryGoodsRequestDat
     data
   )
 // 获得物品详细信息
-export const reqGetGoodInfo = (id:string) => request.get<any, GetGoodInfoResponseData>(CATEGORY.GET_GOOD_INFO_API,{
-  params:{
-    id:id
-  }
-})
+export const reqGetGoodInfo = (id: string) =>
+  request.get<any, GetGoodInfoResponseData>(CATEGORY.GET_GOOD_INFO_API, {
+    params: {
+      id: id
+    }
+  })

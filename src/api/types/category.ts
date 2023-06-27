@@ -80,47 +80,47 @@ export interface GetSecondCategoryGoodsResponseData extends ResponseData {
 }
 
 export interface GoodEvaluationInfoData {
-  id:string,
-  orderInfo:null,
-  member:null,
-  score:number,
-  tags:null,
-  content:string,
-  pictures:null,
-  officialReply:null,
-  praiseCount:number,
-  createTime:string,
-  praisePercent:number
+  id: string
+  orderInfo: null
+  member: null
+  score: number
+  tags: null
+  content: string
+  pictures: null
+  officialReply: null
+  praiseCount: number
+  createTime: string
+  praisePercent: number
 }
 
 export interface GoodInfoData {
-  id:string,
-  name:string,
-  spuCode:string,
-  desc:string,
-  price:string,
-  oldPrice:string,
-  discount:number,
-  inventory:number,
-  brand:any,
-  salesCount:number,
-  commentCount:number,
-  collectCount:number,
-  mainVideos:number,
-  mainPictures:any,
-  specs:any,
-  skus:any,
-  categories:any,
-  details:any,
-  isPreSale:boolean,
-  isCollect:null,
-  recommends:null,
-  userAddress:null,
-  similarProducts:SecondCategoryGoodsData[],
-  hotByDay:SecondCategoryGoodsData[],
-  evaluationInfo:GoodEvaluationInfoData
+  id: string
+  name: string
+  spuCode: string
+  desc: string
+  price: string
+  oldPrice: string
+  discount: number
+  inventory: number
+  brand: any
+  salesCount: number
+  commentCount: number
+  collectCount: number
+  mainVideos: number
+  mainPictures: any
+  specs: any
+  skus: any
+  categories: any
+  details: any
+  isPreSale: boolean
+  isCollect: null
+  recommends: null
+  userAddress: null
+  similarProducts: SecondCategoryGoodsData[]
+  hotByDay: SecondCategoryGoodsData[]
+  evaluationInfo: GoodEvaluationInfoData
 }
 
 export interface GetGoodInfoResponseData extends ResponseData {
-  result:GoodInfoData
+  result: GoodInfoData
 }

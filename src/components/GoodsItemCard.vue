@@ -1,5 +1,5 @@
 <template>
-  <v-card variant="flat" height="100%" :to="{name:'detail', params:{id:id}}">
+  <v-card variant="flat" height="100%" :to="{ name: 'detail', params: { id: id } }">
     <v-img cover :src="picture"></v-img>
     <v-card-item class="d-flex flex-column align-center justify-center">
       <div class="text-h6 text-center text-no-wrap text-truncate font-weight-bold">{{ name }}</div>
@@ -27,9 +27,9 @@ const props = defineProps({
     type: String,
     required: true
   },
-  id:{
-    type:String,
-    required:true
+  id: {
+    type: String,
+    required: true
   }
 })
 </script>

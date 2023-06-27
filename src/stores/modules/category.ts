@@ -32,7 +32,7 @@ const useCategoryStore = defineStore('category', () => {
     return response.result
   }
   // 获取物品的详细信息
-  const getGoodInfo = async (id:string) => {
+  const getGoodInfo = async (id: string) => {
     const resp = await reqGetGoodInfo(id)
     return resp.result
   }

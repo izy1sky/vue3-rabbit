@@ -24,8 +24,8 @@ const routes: any[] = [
       {
         path: 'details/:id',
         name: 'detail',
-        component:  ()=>import("@/views/details/index.vue"),
-        props:  true
+        component: () => import('@/views/details/index.vue'),
+        props: true
       }
     ]
   },
