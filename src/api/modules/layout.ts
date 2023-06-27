@@ -4,14 +4,16 @@ import type {
   GetBannerResponseData,
   GetNewResponseData,
   GetHotResponseData,
-  GetHomeGoodsResponseData
+  GetHomeGoodsResponseData,
 } from '../types/layout'
 enum LAYOUT {
   GET_CATEGORY_API = '/home/category/head',
   GET_BANNER_API = '/home/banner',
   GET_NEW_API = '/home/new',
   GET_HOT_API = '/home/hot',
-  GET_GOODS_API = '/home/goods'
+  GET_GOODS_API = '/home/goods',
+
+
 }
 
 export const reqGetCategoryList = () =>
@@ -21,3 +23,4 @@ export const reqGetBanner = (index: string) =>
 export const reqGetNew = () => request.get<any, GetNewResponseData>(LAYOUT.GET_NEW_API)
 export const reqGetHot = () => request.get<any, GetHotResponseData>(LAYOUT.GET_HOT_API)
 export const reqGetGoods = () => request.get<any, GetHomeGoodsResponseData>(LAYOUT.GET_GOODS_API)
+

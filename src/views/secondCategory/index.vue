@@ -75,7 +75,7 @@ watch(
     const response = await categoryStore.getSecondCategoryGoods(reqGoodsData.value)
     goods.value = []
     nextTick(() => {
-        goods.value = response.items
+      goods.value = response.items
     })
   },
   {

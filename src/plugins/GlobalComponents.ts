@@ -1,11 +1,13 @@
 import NewAndHotCardVue from '@/components/NewAndHotCard.vue'
 import GoodsItemCard from '@/components/GoodsItemCard.vue'
+import SpecCard from '@/components/SpecCard.vue'
 import type { App, Component } from 'vue'
 const global_components: {
   [name: string]: Component
 } = {
   NewAndHotCardVue,
-  GoodsItemCard
+  GoodsItemCard,
+  SpecCard
 }
 export default {
   install(app: App) {

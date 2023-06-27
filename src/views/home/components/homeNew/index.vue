@@ -9,6 +9,7 @@
               :name="good.name"
               :desc="good.desc"
               :price="good.price"
+              :id="good.id"
             ></GoodsItemCard>
             <!-- <v-card >
                             <v-img cover :src="good.picture"></v-img>

@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import {
   reqGetCategory,
+  reqGetGoodInfo,
   reqGetSecondCategory,
   reqGetSecondCategoryGoods
 } from '@/api/modules/category'
@@ -30,11 +31,17 @@ const useCategoryStore = defineStore('category', () => {
     const response = await reqGetSecondCategoryGoods(data)
     return response.result
   }
+  // 获取物品的详细信息
+  const getGoodInfo = async (id:string) => {
+    const resp = await reqGetGoodInfo(id)
+    return resp.result
+  }
   return {
     getCategory,
     getBannerList,
     getSecondCategoryNav,
-    getSecondCategoryGoods
+    getSecondCategoryGoods,
+    getGoodInfo
   }
 })
 

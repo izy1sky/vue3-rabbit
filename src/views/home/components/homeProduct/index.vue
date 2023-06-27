@@ -24,6 +24,7 @@
                 <template v-for="good in product.goods" :key="good.id">
                   <v-col cols="3">
                     <GoodsItemCard
+                      :id="good.id"
                       :picture="good.picture"
                       :name="good.name"
                       :desc="good.desc"
@@ -54,7 +55,6 @@ import { onMounted } from 'vue'
 import { ref } from 'vue'
 import type { Ref } from 'vue'
 import type { HomeGoodData } from '@/api/types/layout'
-import GoodsItemCard from '@/components/GoodsItemCard.vue'
 const layoutStore = useLayoutStore()
 const products: Ref<HomeGoodData[]> = ref([])
 onMounted(async () => {

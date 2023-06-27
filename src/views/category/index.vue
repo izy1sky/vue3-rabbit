@@ -41,6 +41,7 @@
               <template v-for="good in children.goods" :key="good.id">
                 <v-col cols="2" class="ma-2">
                   <GoodsItemCard
+                    :id="good.id"
                     :picture="good.picture"
                     :name="good.name"
                     :desc="good.desc"

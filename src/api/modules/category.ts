@@ -3,12 +3,15 @@ import type {
   GetCategoryResponseData,
   GetSecondCategoryResponseData,
   GetSecondCategoryGoodsRequestData,
-  GetSecondCategoryGoodsResponseData
+  GetSecondCategoryGoodsResponseData,
+  GetGoodInfoResponseData
 } from '../types/category'
+
 enum CATEGORY {
   GET_CATEGORY_API = '/category',
   GET_SECOND_CATEGORY_API = '/category/sub/filter',
-  GET_SECOND_CATEGORY_GOODS_API = '/category/goods/temporary'
+  GET_SECOND_CATEGORY_GOODS_API = '/category/goods/temporary',
+  GET_GOOD_INFO_API = '/goods',
 }
 
 export const reqGetCategory = (id: string) =>
@@ -32,3 +35,9 @@ export const reqGetSecondCategoryGoods = (data: GetSecondCategoryGoodsRequestDat
     CATEGORY.GET_SECOND_CATEGORY_GOODS_API,
     data
   )
+// 获得物品详细信息
+export const reqGetGoodInfo = (id:string) => request.get<any, GetGoodInfoResponseData>(CATEGORY.GET_GOOD_INFO_API,{
+  params:{
+    id:id
+  }
+})
