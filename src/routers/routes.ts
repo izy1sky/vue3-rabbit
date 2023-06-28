@@ -30,12 +30,12 @@ const routes: any[] = [
       {
         path: '/cartList',
         name: 'cartList',
-        component:()=>import('@/views/cartList/index.vue')
+        component: () => import('@/views/cartList/index.vue')
       },
       {
-        path:'/checkout',
-        name:'checkout',
-        component:()=>import('@/views/checkout/index.vue')
+        path: '/checkout',
+        name: 'checkout',
+        component: () => import('@/views/checkout/index.vue')
       }
     ]
   },

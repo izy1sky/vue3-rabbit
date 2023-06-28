@@ -120,9 +120,21 @@
             <v-row justify="start" align="center">
               <v-col cols="auto">数量</v-col>
               <v-col cols="auto" class="d-flex justify-start align-stretch">
-                <v-btn icon="mdi-minus" variant="text" size="x-small" @click="specCountDecre"></v-btn>
-                <v-btn  variant="text" size="x-small" class="text-h6" :ripple="false">{{ specCount }}</v-btn>
-                <v-btn icon="mdi-plus"  variant="text" size="x-small" @click="specCountIncre"></v-btn>
+                <v-btn
+                  icon="mdi-minus"
+                  variant="text"
+                  size="x-small"
+                  @click="specCountDecre"
+                ></v-btn>
+                <v-btn variant="text" size="x-small" class="text-h6" :ripple="false">{{
+                  specCount
+                }}</v-btn>
+                <v-btn
+                  icon="mdi-plus"
+                  variant="text"
+                  size="x-small"
+                  @click="specCountIncre"
+                ></v-btn>
               </v-col>
             </v-row>
           </v-card-item>
@@ -205,9 +217,9 @@ const props = defineProps({
   }
 })
 // 获取的spec的数量
-const specCount:Ref<number> = ref(1)
+const specCount: Ref<number> = ref(1)
 // 获取spec的信息
-const spec:Ref<any> = ref({})
+const spec: Ref<any> = ref({})
 // 获得面包屑信息
 const breadCrumbsItems: Ref<string[]> = ref(['首页'])
 // 主题大图的url
@@ -292,9 +304,9 @@ const specCountIncre = () => {
 
 // 增加购物车
 const addCart = () => {
-  console.log(spec.value);
+  console.log(spec.value)
   if (!spec.value.skuCode) {
-    return ;
+    return
   }
   cartStore.addCart({
     skuId: spec.value.skuCode,

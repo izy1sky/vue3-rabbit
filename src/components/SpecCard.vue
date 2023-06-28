@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed } from 'vue'
 import { ref } from 'vue'
 const props = defineProps(['specs', 'skus'])
@@ -30,7 +30,7 @@ const emit = defineEmits(['change'])
 const specsValue: any = ref({})
 // 选择的spec的属性
 const spec = computed(() => {
-  return props.skus.find((sku:any) => {
+  return props.skus.find((sku: any) => {
     const property = sku.specs.reduce((acc, item) => {
       acc[item.name] = item.valueName
       return acc

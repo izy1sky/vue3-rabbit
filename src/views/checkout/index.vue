@@ -1,9 +1,7 @@
 <template>
-    <h1>This is the checkout page!</h1>
+  <h1>This is the checkout page!</h1>
 </template>
 
-<script setup lang='ts'>
-</script>
+<script setup lang="ts"></script>
 
-<style scoped lang=''>
-</style>
+<style scoped lang=""></style>

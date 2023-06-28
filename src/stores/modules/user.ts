@@ -24,7 +24,7 @@ const useUserStore = defineStore(
       }
     }
 
-    const setToken = (token1:string) => {
+    const setToken = (token1: string) => {
       token.value = token1
     }
 

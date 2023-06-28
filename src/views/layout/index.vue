@@ -3,8 +3,11 @@
     <layoutNav></layoutNav>
     <v-main>
       <v-container class="container">
-        <layoutHeader style="z-index: 10;"></layoutHeader>
-        <router-view :key="($route.params.id as string)" style="position: relative; z-index: 1;"></router-view>
+        <layoutHeader style="z-index: 10"></layoutHeader>
+        <router-view
+          :key="($route.params.id as string)"
+          style="position: relative; z-index: 1"
+        ></router-view>
       </v-container>
     </v-main>
     <layoutFooter></layoutFooter>

@@ -26,7 +26,7 @@ request.interceptors.response.use(
     const userStore = useUserStore(pinia)
     const status = e.response.status
     if (status === 401) {
-      router.push({name:'login'})
+      router.push({ name: 'login' })
     }
     userStore.setError(e.response.data.message)
     return e
