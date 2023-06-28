@@ -7,7 +7,7 @@ const global_components: {
 } = {
   NewAndHotCardVue,
   GoodsItemCard,
-  SpecCard
+  SpecCard,
 }
 export default {
   install(app: App) {

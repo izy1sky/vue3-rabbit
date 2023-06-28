@@ -56,7 +56,7 @@
                   ></v-checkbox>
                 </v-card-item>
                 <v-card-actions>
-                  <v-btn color="green" block :disabled="!form || !agreeCheckbox">点击登陆</v-btn>
+                  <v-btn color="green" block :disabled="!form || !agreeCheckbox" @click.prevent="loginHandler">点击登陆</v-btn>
                 </v-card-actions>
               </v-form>
             </v-card>
@@ -91,17 +91,35 @@
 </template>
 
 <script setup lang="ts">
+import useUserStore from '@/stores/modules/user';
+import { storeToRefs } from 'pinia';
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import { useRouter } from 'vue-router';
+// 获取一些全局变量和仓库中的变量
+const userStore = useUserStore()
+const {token} = storeToRefs(userStore)
+const $router = useRouter()
 // 表单的有效性
 const form: Ref<boolean> = ref(false)
-// 账户和密码
-const username: Ref<string> = ref('')
-const password: Ref<string> = ref('')
+// 账户和密码以及登录的逻辑
+const username: Ref<string> = ref('12056258282')
+const password: Ref<string> = ref('hm#qd@23!')
+const loginHandler = async() => {
+  try {
+    const response = await userStore.userLogin(username.value, password.value)
+    token.value = response.token
+    $router.push({name: 'home'})
+  } catch (e:any) {
+    console.log(e.message);
+  }
+
+}
+
 // 检查输入的规则
 const rules: Ref<any> = ref([
   (value: string) => {
-    if (value.length < 5 || value.length > 16) return '输入长度必须在6-15个字符内！'
+    if (value.length < 5 || value.length > 40) return '输入长度必须在6-40个字符内！'
     return true
   }
 ])
