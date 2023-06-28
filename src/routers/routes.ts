@@ -26,6 +26,16 @@ const routes: any[] = [
         name: 'detail',
         component: () => import('@/views/details/index.vue'),
         props: true
+      },
+      {
+        path: '/cartList',
+        name: 'cartList',
+        component:()=>import('@/views/cartList/index.vue')
+      },
+      {
+        path:'/checkout',
+        name:'checkout',
+        component:()=>import('@/views/checkout/index.vue')
       }
     ]
   },

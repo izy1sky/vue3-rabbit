@@ -82,7 +82,7 @@
         </v-row>
       </v-col>
       <v-col cols="6" class="d-flex flex-column align-start justify-start text-body-1">
-        <v-card variant="flat" width="100%">
+        <v-card variant="flat" class="mt-5" width="100%">
           <v-card-item
             ><div class="font-weight-bold">{{ goodInfo.name }}</div></v-card-item
           >
@@ -98,7 +98,7 @@
             </div>
           </v-card-item>
         </v-card>
-        <v-card variant="tonal" width="100%">
+        <v-card variant="tonal" class="mt-5" width="100%">
           <v-card-item>
             <span class="text-caption">促销</span>
             <span class="ms-2">12月好物放送，App内购买直降120元</span>
@@ -115,6 +115,23 @@
           :skus="goodInfo.skus"
           @change="changeSpecsHandler"
         ></SpecCard>
+        <v-card variant="flat" class="mt-5" width="100%">
+          <v-card-item>
+            <v-row justify="start" align="center">
+              <v-col cols="auto">数量</v-col>
+              <v-col cols="auto" class="d-flex justify-start align-stretch">
+                <v-btn icon="mdi-minus" variant="text" size="x-small" @click="specCountDecre"></v-btn>
+                <v-btn  variant="text" size="x-small" class="text-h6" :ripple="false">{{ specCount }}</v-btn>
+                <v-btn icon="mdi-plus"  variant="text" size="x-small" @click="specCountIncre"></v-btn>
+              </v-col>
+            </v-row>
+          </v-card-item>
+        </v-card>
+        <v-card variant="flat" class="mt-5" width="100%">
+          <v-card-item>
+            <v-btn color="primary" @click="addCart" :disabled="!spec">加入购物车</v-btn>
+          </v-card-item>
+        </v-card>
       </v-col>
     </v-row>
   </v-card>
@@ -173,12 +190,13 @@
 
 <script setup lang="ts">
 import useCategoryStore from '@/stores/modules/category'
+import useCartStore from '@/stores/modules/cart'
 import type { Ref } from 'vue'
 import { onMounted } from 'vue'
 import type { GoodInfoData } from '@/api/types/category'
 import { ref } from 'vue'
-import directives from '@/plugins/directives'
 import { nextTick } from 'vue'
+const cartStore = useCartStore()
 const categoryStore = useCategoryStore()
 const props = defineProps({
   id: {
@@ -186,6 +204,10 @@ const props = defineProps({
     required: true
   }
 })
+// 获取的spec的数量
+const specCount:Ref<number> = ref(1)
+// 获取spec的信息
+const spec:Ref<any> = ref({})
 // 获得面包屑信息
 const breadCrumbsItems: Ref<string[]> = ref(['首页'])
 // 主题大图的url
@@ -251,8 +273,34 @@ const mousemoveHandler = (event: MouseEvent) => {
 const mouseleaveHandler = () => {
   isShow.value = false
 }
+// 更改specs的回调函数
+const changeSpecsHandler = (specsValue: any) => {
+  spec.value = specsValue
+}
 
-const changeSpecsHandler = (specsValue: any) => console.log(specsValue)
+// 减少物品数量
+const specCountDecre = () => {
+  if (specCount.value > 1) {
+    specCount.value -= 1
+  }
+}
+
+// 增加物品数量
+const specCountIncre = () => {
+  specCount.value += 1
+}
+
+// 增加购物车
+const addCart = () => {
+  console.log(spec.value);
+  if (!spec.value.skuCode) {
+    return ;
+  }
+  cartStore.addCart({
+    skuId: spec.value.skuCode,
+    count: specCount.value
+  })
+}
 </script>
 
 <style scoped lang="scss">

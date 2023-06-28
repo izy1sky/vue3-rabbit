@@ -1,6 +1,7 @@
 import NewAndHotCardVue from '@/components/NewAndHotCard.vue'
 import GoodsItemCard from '@/components/GoodsItemCard.vue'
 import SpecCard from '@/components/SpecCard.vue'
+import GoodsItemCardHorizontal from '@/components/GoodsItemCardHorizontal.vue'
 import type { App, Component } from 'vue'
 const global_components: {
   [name: string]: Component
@@ -8,6 +9,7 @@ const global_components: {
   NewAndHotCardVue,
   GoodsItemCard,
   SpecCard,
+  GoodsItemCardHorizontal
 }
 export default {
   install(app: App) {

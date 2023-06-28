@@ -1,5 +1,6 @@
 import type { App } from 'vue'
 import { createVuetify } from 'vuetify'
+import { VDataTable } from 'vuetify/labs/components'
 import type { ThemeDefinition } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import pinia from '@/plugins/pinia'
@@ -18,6 +19,9 @@ const myCustomLightTheme: ThemeDefinition = {
   }
 }
 const vuetify = createVuetify({
+  components: {
+    VDataTable
+  },
   icons: {
     defaultSet: 'mdi',
     aliases,

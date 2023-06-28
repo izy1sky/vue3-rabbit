@@ -21,16 +21,16 @@
 </template>
 
 <script setup lang="ts">
-import { watchEffect } from 'vue'
+import type { Ref } from 'vue';
 import { computed } from 'vue'
-import { watch } from 'vue'
 import { ref } from 'vue'
 const props = defineProps(['specs', 'skus'])
 const emit = defineEmits(['change'])
-// 选择的spec的属性
+
 const specsValue: any = ref({})
+// 选择的spec的属性
 const spec = computed(() => {
-  return props.skus.find((sku) => {
+  return props.skus.find((sku:any) => {
     const property = sku.specs.reduce((acc, item) => {
       acc[item.name] = item.valueName
       return acc
@@ -39,9 +39,7 @@ const spec = computed(() => {
   })
 })
 const clickHandler = () => {
-  if (spec.value) {
-    emit('change', spec.value)
-  }
+  emit('change', spec.value)
 }
 </script>
 
